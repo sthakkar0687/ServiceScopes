@@ -1,0 +1,18 @@
+﻿@using ServiceScopesMVC.Services.Interfaces
+@inject IScoped scoped
+@inject ITransient transient
+@inject ISingleton singleton
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <br />
+    <div>
+        <div class="font-weight-bold">Singleton Count : @singleton.GetSingletonCount()</div>
+        <div>Scoped Count : @scoped.GetScopedCount()</div>
+        <div>Transient Count : @transient.GetTransientCount()</div>
+    </div>
+</div>
